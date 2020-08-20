@@ -16,9 +16,9 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh 'echo `pwd`'
                 sh 'tar -cjvf artefacts.tar.bz2 ./dist/eSchool/*'
                 sh 'scp -o "StrictHostKeyChecking=no" ./artefacts.tar.bz2 bebyx@eschool-fe1:/home/bebyx/CI'
+                sh 'scp -o "StrictHostKeyChecking=no" ./artefacts.tar.bz2 bebyx@eschool-fe2:/home/bebyx/CI'
             }
         }
     }
